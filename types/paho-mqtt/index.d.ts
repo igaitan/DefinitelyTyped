@@ -167,7 +167,17 @@ declare namespace Paho {
             /**
              * If present the set of ports matching the hosts. If hosts contains URIs, this property is not used.
              */
-            ports?: number[];
+	        ports?: number[];
+
+            /**
+             * Sets whether the client will automatically attempt to reconnect to the server if the connection is lost.
+             * If set to false, the client will not attempt to automatically reconnect to the server in the event that
+             * the connection is lost.
+             * If set to true, in the event that the connection is lost, the client will attempt to reconnect to the server.
+             * It will initially wait 1 second before it attempts to reconnect, for every failed reconnect attempt,
+             * the delay will double until it is at 2 minutes at which point the delay will stay at 2 minutes.
+             */
+            reconnect?: boolean;
         }
 
         /**

@@ -26,6 +26,7 @@ client.connect({
     },
     hosts: ["localhost", "8.8.8.8"],
     ports: [80, 443],
+    reconnect: true
 });
 
 console.log(`created new client on "${client.host}:${client.port}/${client.path}" with id "${client.clientId}"`);
